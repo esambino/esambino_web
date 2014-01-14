@@ -364,6 +364,30 @@ $(function () {
         $(window).resize(sectionResize).trigger('resize');
     }
 
+    //firebase email
+    $('#contact-nickname').hide();
+    $('#contact-form').submit(function(){
+        var nickname = $("#contact-nickname").val();
+        var name = $("#contact-name").val();
+        var email = $("#contact-email").val();
+        var subject = $("#contact-subject").val();
+        var message = $("#contact-message").val();
+
+        // this is used to prevent robot
+        if(nickname != "") {return false;}
+        if(name == "") {alert("Please input your name"); return false;}
+        if(email == "") {alert("Please input your email"); return false;}
+        if(message == "") {alert("Please input your message"); return false;}
+        var myDataRef = new Firebase('https://esambino-contact.firebaseio.com/');
+        myDataRef.push({date: (new Date()).toString(), name: name,email: email, subject: subject, message: message});
+        alert("Thank you. Your message has been sent successfully.");
+        var name = $("#contact-name").val("");
+        var email = $("#contact-email").val("");
+        var subject = $("#contact-subject").val("");
+        var message = $("#contact-message").val("");
+        return false;
+    });
+
     //resize window.width
     $(window).resize(function () {
         $("#custom-wrap").width($(window).width());

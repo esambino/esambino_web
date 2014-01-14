@@ -10,6 +10,7 @@
 <meta property="og:image" content="" />
 <link rel="shorcut icon" href="" type="image/x-icon">
 <link rev="made" href="esambino.hsieh@gmail.com">
+<script type="text/javascript" src="https://cdn.firebase.com/v0/firebase.js"></script>
 </head>
 <body>
 <link href="css/font.css" rel="stylesheet">
@@ -242,13 +243,132 @@
                         <section class="feature kv">
                             <article class="inner">
                                 <article class="inner-content">
+                                    <form id="contact-form" class="form-horizontal" role="form">
+                                        <input type="text" id="contact-nickname" style="display: none;">
+                                        <div class="form-group">
+                                            <label for="contact-name" class="col-sm-2
+                                                control-label">Name</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control input-lg" id="contact-name" placeholder="Your name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contact-email" class="col-sm-2 control-label">Email</label>
+                                            <div class="col-sm-10">
+                                                <input type="email" class="form-control input-lg" id="contact-email" placeholder="Your email with which we can reply you">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contact-subject" class="col-sm-2
+                                                control-label">Subject</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control input-lg" id="contact-subject" placeholder="Subject">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contact-message" class="col-sm-2
+                                                control-label">Message</label>
+                                            <div class="col-sm-10">
+                                                <textarea id="contact-message" class="form-control input-lg" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group pull-right">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button type="submit" class="btn btn-default">Send</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </article>
                             </article>
                         </section>
                     </li>
                 </ul>
             </section>
-
+            <style>
+                form {
+                    display: block;
+                    margin-top: 0em;
+                }
+                form::selection {
+                    background-color: #FBFF69;
+                    color: #6059aa;
+                }
+                input {
+                    display:none;
+                    font-family: inherit;
+                    font-size: inherit;
+                    line-height: inherit;
+                    margin: 0;
+                    font: -webkit-small-control;
+                    color: initial;
+                    letter-spacing: normal;
+                    word-spacing: normal;
+                    text-transform: none;
+                    text-indent: 0px;
+                    text-shadow: none;
+                    text-align: start;
+                }
+                .form-group {
+                    margin-bottom: 15px;
+                }
+                .form-horizontal .control-label {
+                    text-align: left;
+                    color: #777777;
+                    padding-top: 9px;
+                }
+                .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+                    margin-bottom: 20px;
+                    position: relative;
+                    min-height: 1px;
+                    padding: 0px 15px;
+                    float: left;
+                }
+                label {
+                    display: inline-block;
+                    font-weight: bold;
+                }
+                .form-control {
+                    display: block;
+                    width: 100%;
+                    height: 38px;
+                    padding: 8px 12px;
+                    font-size: 14px;
+                    line-height: 1.428571429;
+                    color: #555;
+                    vertical-align: middle;
+                    background-color: #fff;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+                    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+                    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                }
+                .pull-right {
+                    float: right;
+                }
+                .btn-default {
+                    color: #fff;
+                    background-color: #6059aa;
+                    border-color: #6059aa;
+                }
+                .btn {
+                    min-width: 120px;
+                    display: inline-block;
+                    padding: 8px 12px;
+                    margin-bottom: 0;
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 1.428571429;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: middle;
+                    cursor: pointer;
+                    border: 1px solid transparent;
+                    border-radius: 4px;
+                    -webkit-user-select: none;
+                }
+            </style>
         </section> <!-- follow-wrap -->
        
     </section>  <!-- custom-wrap -->
